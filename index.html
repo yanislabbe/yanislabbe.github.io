@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recherche de produits</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .centered {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        div {
+            font-family: Arial, sans-serif;
+        }
+        .hidden {
+            color: #fff; /* La même couleur que le fond de l'élément <div> */
+            visibility: hidden; /* Cache le texte du mot-clé */
+          }
+          
+    </style>
+	<script>
+		function search() {
+			// Récupérer le mot-clé saisi par l'utilisateur
+			var keyword = document.getElementById("keyword").value.toLowerCase();
+			
+			// Récupérer la liste des produits
+			var products = document.getElementsByClassName("product");
+			
+			// Récupérer l'élément du message à afficher lorsque aucun produit ne correspond
+			var noResultsMessage = document.getElementById("no-results-message");
+
+			// Boucler à travers chaque produit et cacher ceux qui ne correspondent pas
+			var found = false;
+			for (var i = 0; i < products.length; i++) {
+				var productName = products[i].getElementsByClassName("product-name")[0].innerHTML.toLowerCase();
+				if (productName.indexOf(keyword) !== -1) {
+					products[i].style.display = "block";
+					found = true;
+				} else {
+					products[i].style.display = "none";
+				}
+			}
+
+			// Afficher le message lorsque aucun produit ne correspond
+			if (!found) {
+				noResultsMessage.style.display = "block";
+			} else {
+				noResultsMessage.style.display = "none";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Recherche de produits</h1>
+	<label for="keyword">Mot-clé:</label>
+	<input type="text" id="keyword" onkeyup="search()">
+	<h2>Résultats:</h2>
+    <div id="no-results-message" style="display:none;">Aucun produit ne correspond à votre recherche</div>
+
+    <!-- Ailes de poulet La Cage 550g -->
+	<div class="product"><div class="product-name hidden">Ailes de poulet La Cage 550g</div>
+		<div class="centered"><img src="img/product/aile-de-poulet-la-cage.png" alt="produit" width="160" height="160"></div>
+        <div class="centered"><h3>Ailes de poulet La Cage 550g</h3></div>
+        <div class="centered">14,99$ (2,73$/100g) prix régulier le plus cher (mars 2023)</div><br/>
+        <a href="https://www.superc.ca/allees/produits-surgeles/entrees-et-collations/hors-d-oeuvre/ailes-de-poulet-buffalo-surgelees/p/850715000020" target="_blank">
+            <img src="img/shop/super-c.png" alt="super-c" width="80" height="80"></a>
+        <a href="https://www.iga.net/fr/produit/ailes-de-pouletpoivre-et-sel-marin/00000_000000085071500003" target="_blank">
+            <img src="img/shop/iga.png" alt="iga" width="80" height="80"></a>
+        <a href="https://www.metro.ca/epicerie-en-ligne/allees/produits-surgeles/entrees-et-collations/hors-d-oeuvre/ailes-de-poulet-buffalo-surgelees/p/850715000020" target="_blank">
+            <img src="img/shop/metro.jpeg" alt="metro" width="80" height="80"></a>
+        <a href="https://www.walmart.ca/fr/ip/ailes-de-poulet-buffalo-la-cage/6000201880168" target="_blank">
+            <img src="img/shop/walmart.jpeg" alt="walmart" width="80" height="80"></a>
+        <a href="https://www.maxi.ca/ailes-de-poulet-pic-es-exceldor-buffalo/p/21286677_EA?icta=recommended-carousel" target="_blank">
+            <img src="img/shop/maxi.png" alt="maxi" width="80" height="80"></a><br/>
+    </div></div>
+
+    <!-- Lait Natrel 2L 2% -->
+    <div class="product"><div class="product-name hidden">Lait Natrel 2L 2%</div>
+		<div class="centered"><img src="img/product/natrel-lait-2l.jpeg" alt="produit" width="160" height="160"></div>
+        <div class="centered"><h3>Lait Natrel 2L 2%</h3></div>
+        <div class="centered">5,38$ (0,27$/100ml) prix régulier le plus cher (mars 2023)</div><br/>
+        <a href="https://www.superc.ca/allees/produits-laitiers-et-oeufs/laits-cremes-et-beurres/laits-entiers-et-2/lait-2/p/064420010124" target="_blank">
+            <img src="img/shop/super-c.png" alt="super-c" width="80" height="80"></a>
+        <a href="https://www.iga.net/fr/produit/lait2--m-g-/00000_000000006442001012" target="_blank">
+            <img src="img/shop/iga.png" alt="iga" width="80" height="80"></a>
+        <a href="https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/laits-cremes-et-beurres/laits-entiers-et-2/lait-2/p/064420010124" target="_blank">
+            <img src="img/shop/metro.jpeg" alt="metro" width="80" height="80"></a>
+        <a href="https://www.walmart.ca/fr/ip/Lait-finement-filtr-2-Natrel/6000100070995" target="_blank">
+            <img src="img/shop/walmart.jpeg" alt="walmart" width="80" height="80"></a>
+        <a href="https://www.maxi.ca/lait-finement-filtr-2-2l/p/20301315004_EA" target="_blank">
+            <img src="img/shop/maxi.png" alt="maxi" width="80" height="80"></a><br/>
+    </div></div>
+
+    <!-- 12 Oeufs Gros marque maison -->
+    <div class="product"><div class="product-name hidden">12 Oeufs Gros marque maison</div>
+		<div class="centered"><img src="img/product/oeufs-gros-marque-maison.jpeg" alt="produit" width="160" height="160"></div>
+        <div class="centered"><h3>12 Oeufs Gros marque maison</h3></div>
+        <div class="centered">3,89$ (0,32$/un) prix régulier le plus cher (mars 2023)</div><br/>
+        <a href="https://www.superc.ca/allees/produits-laitiers-et-oeufs/oeufs/oeufs-entiers/gros-oeufs-blancs/p/059749896054" target="_blank">
+            <img src="img/shop/super-c.png" alt="super-c" width="80" height="80"></a>
+        <a href="https://www.iga.net/fr/produit/oeufsblancs-gros/00000_000000005574256195" target="_blank">
+            <img src="img/shop/iga.png" alt="iga" width="80" height="80"></a>
+        <a href="https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/oeufs/oeufs-entiers/gros-oeufs-blancs/p/059749896054" target="_blank">
+            <img src="img/shop/metro.jpeg" alt="metro" width="80" height="80"></a>
+        <a href="https://www.walmart.ca/fr/ip/Oeufs-Great-Value-calibre-gros/6000023483943" target="_blank">
+            <img src="img/shop/walmart.jpeg" alt="walmart" width="80" height="80"></a>
+        <a href="https://www.maxi.ca/oeuf-gros-categ-a-blanc-unite/p/20812144001_EA" target="_blank">
+            <img src="img/shop/maxi.png" alt="maxi" width="80" height="80"></a><br/>
+    </div></div>
+
+    <!-- BECEL Margarine Originale 427g -->
+    <div class="product"><div class="product-name hidden">BECEL Margarine Originale 427g</div>
+		<div class="centered"><img src="img/product/becel-margarine-originale-427g.png" alt="produit" width="160" height="160"></div>
+        <div class="centered"><h3>BECEL Margarine Originale 427g</h3></div>
+        <div class="centered">5,49$ (1,21$/100g) prix régulier le plus cher (mars 2023)</div><br/>
+        <a href="https://www.superc.ca/allees/produits-laitiers-et-oeufs/laits-cremes-et-beurres/beurres-et-margarines/margarine-originale/p/059950190101" target="_blank">
+            <img src="img/shop/super-c.png" alt="super-c" width="80" height="80"></a>
+        <a href="https://www.iga.net/fr/produit/margarinemolle/00000_000000005995019010" target="_blank">
+            <img src="img/shop/iga.png" alt="iga" width="80" height="80"></a>
+        <a href="https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/laits-cremes-et-beurres/beurres-et-margarines/margarine-originale/p/059950190101" target="_blank">
+            <img src="img/shop/metro.jpeg" alt="metro" width="80" height="80"></a>
+        <a href="https://www.walmart.ca/fr/ip/margarine-becel-originale/6000159562732" target="_blank">
+            <img src="img/shop/walmart.jpeg" alt="walmart" width="80" height="80"></a>
+        <a href="https://www.maxi.ca/margarine-originale/p/20322707001_EA" target="_blank">
+            <img src="img/shop/maxi.png" alt="maxi" width="80" height="80"></a><br/>
+    </div></div>
+    
+    <!-- BECEL Margarine Originale 850g -->
+    <div class="product"><div class="product-name hidden">BECEL Margarine Originale 850g</div>
+		<div class="centered"><img src="img/product/becel-margarine-originale-850g.png" alt="produit" width="160" height="160"></div>
+        <div class="centered"><h3>BECEL Margarine Originale 850g</h3></div>
+        <div class="centered">9,79$ (1,15$/100g) prix régulier le plus cher (mars 2023)</div><br/>
+        <a href="https://www.superc.ca/allees/produits-laitiers-et-oeufs/laits-cremes-et-beurres/beurres-et-margarines/margarine-originale/p/059950191009" target="_blank">
+            <img src="img/shop/super-c.png" alt="super-c" width="80" height="80"></a>
+        <a href="https://www.iga.net/fr/produit/margarinemolle/00000_000000005995019100" target="_blank">
+            <img src="img/shop/iga.png" alt="iga" width="80" height="80"></a>
+        <a href="https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/laits-cremes-et-beurres/beurres-et-margarines/margarine-originale/p/059950191009" target="_blank">
+            <img src="img/shop/metro.jpeg" alt="metro" width="80" height="80"></a>
+        <a href="https://www.walmart.ca/fr/ip/margarine-becel-originale/6000016935598" target="_blank">
+            <img src="img/shop/walmart.jpeg" alt="walmart" width="80" height="80"></a>
+        <a href="https://www.maxi.ca/margarine-originale/p/20297818002_EA" target="_blank">
+            <img src="img/shop/maxi.png" alt="maxi" width="80" height="80"></a><br/>
+    </div></div>
+
+
+
+    <!-- Example -->
+    <!--
+
+    <div class="product"><div class="product-name hidden">PRODUIT</div>
+		<div class="centered"><img src="WEBSITE" alt="produit" width="160" height="160"></div>
+        <div class="centered"><h3>PRODUIT</h3></div>
+        <div class="centered">prix régulier le plus cher (mars 2023)</div><br/>
+        <a href="LIEN" target="_blank">
+            <img src="img/shop/super-c.png" alt="super-c" width="80" height="80"></a>
+        <a href="LIEN" target="_blank">
+            <img src="img/shop/iga.png" alt="iga" width="80" height="80"></a>
+        <a href="LIEN" target="_blank">
+            <img src="img/shop/metro.jpeg" alt="metro" width="80" height="80"></a>
+        <a href="LIEN" target="_blank">
+            <img src="img/shop/walmart.jpeg" alt="walmart" width="80" height="80"></a>
+        <a href="LIEN" target="_blank">
+            <img src="img/shop/maxi.png" alt="maxi" width="80" height="80"></a><br/>
+    </div></div>
+    
+    -->
+
+</body>
+</html>
